@@ -1,0 +1,22 @@
+body {
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid purple;
+}
+
+.text-field {
+  padding: 9px;
+}
+
+.data-grid-alternate-row {
+  background-color: lightgray;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+}

@@ -1,25 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { purple, green } from "@mui/material/colors";
+import FormPage from "./components/FormPage";
+import NextPage from "./components/NextPage";
+
+const theme = createTheme({
+  palette: {
+    primary: purple,
+    secondary: green,
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Routes>
+        <Route path="/" element={<FormPage />} />
+        <Route path="/nextpage" element={<NextPage />} />
+      </Routes>
+    </ThemeProvider>
   );
 }
 
